@@ -1,0 +1,17 @@
+{% extends 'form/base.html.twig' %}
+{% block title %}
+    Nueva Propiedad
+    
+{% endblock %}
+{% block form %}
+    {{ include('property/_form.html.twig') }}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+  $.(function() {
+    $('#property_price').maskMoney();
+  })
+</script>
+    <script src="{{ asset('js/images.js') }}"></script>
+{% endblock %}

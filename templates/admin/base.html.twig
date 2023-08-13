@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Dashboard
+{% endblock %}
+
+{% block body %}
+	{{ include('admin/nav-movile.html.twig') }}
+	{{ include('admin/sidebar.html.twig') }}
+	<div
+		class="mx-auto lg:ml-80">
+		{# container block #}
+		<section class="py-8">
+			<div class="container px-4 mx-auto">
+				{% block container %}{% endblock %}
+			</div>
+		</section>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'form/base.html.twig' %}
+
+{% block title %}Editar{% endblock %}
+
+{% block form %}
+    <h1>Editar</h1>
+    {{ include('property/_form.html.twig', {'button_label': 'Actualizar'}) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/images.js') }}"></script>
+{% endblock %}
