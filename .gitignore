@@ -7,4 +7,6 @@
 /public/bundles/
 /var/
 /vendor/
+/node_modules/
+/migrations/
 ###< symfony/framework-bundle ###
