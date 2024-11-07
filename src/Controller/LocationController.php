@@ -26,6 +26,8 @@ class LocationController extends AbstractController
         ]);
     }
 
+    
+
     /**
      * @Route("/new", name="app_location_new", methods={"GET", "POST"})
      */

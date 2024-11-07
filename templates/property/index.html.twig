@@ -1,9 +1,6 @@
 {% extends 'admin/base.html.twig' %}
 {% block title %}
     Lista de Propiedades!
-            
-        
-    
 {% endblock %}
 {% block container %}
     {{ include('placeholder/_index.html.twig', {'title': 'Propiedades', 'route': path('app_property_new'),'counter':5}) }}
@@ -13,40 +10,22 @@
                 <thead>
                     <tr class="text-lg text-gray-500 text-center font-mono">
                         <th>
-                            Nombre             
-                                                                                                            
-                                                                                
-                                                    
+                            Nombre
                         </th>
                         <th>
-                            Precio                 
-                                                                                                            
-                                                                                
-                                                    
+                            Precio
                         </th>
                         <th>
-                            Tipo                  
-                                                                                                            
-                                                                                
-                                                    
+                            Tipo
                         </th>
                         <th>
-                            Baños                
-                                                                                                            
-                                                                                
-                                                    
+                            Baños
                         </th>
                         <th>
-                            Habitaciones           
-                                                                                                            
-                                                                                
-                                                    
+                            Habitaciones
                         </th>
                         <th>
-                            Medidas               
-                                                                                                            
-                                                                                
-                                                    
+                            Medidas
                         </th>
                         <th></th>
                     </tr>
@@ -57,7 +36,7 @@
                             <td class="flex px-4 py-3">
                                 {# imagen #}
                                 <a class="inline-block mr-2" href="{{ path('app_property_edit', {'id': property.id}) }}">
-                                    <img class="w-12 h-12 mr-4 object-cover rounded-md" src="{{ asset('uploads/property/' ~ property.images[0].name ) }}" alt=""></a>
+                                    {#<img class="w-12 h-12 mr-4 object-cover rounded-md" src="{{ asset('uploads/property/' ~ property.images.name ) }}" alt=""></a>#}
                                     <div>
                                         <p class="font-medium capitalize">
                                             {{ property.name }}
@@ -105,10 +84,7 @@
                             {% else %}
                                 <tr>
                                     <td colspan="7" class="text-lg text-gray-500 text-center font-mono py-8">
-                                        No hay propiedades             
-                                                                                                                                                    
-                                                                                                                    
-                                                                            
+                                        No hay propiedades
                                     </td>
                                 </tr>
                             {% endfor %}

@@ -34,7 +34,6 @@ class ApiController extends AbstractFOSRestController
                 $property->getBath(),
                 $property->getRoom(),
                 $property->getMesure(),
-                $property->getDetail(),
                 $property->getLocation()
             );
 

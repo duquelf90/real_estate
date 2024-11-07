@@ -2,15 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\PropertyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use App\Repository\PropertyRepository;
+
 use Doctrine\ORM\Mapping as ORM;
 
 
 /**
  * @ORM\Entity(repositoryClass=PropertyRepository::class)
  */
+
 class Property
 {
     /**
@@ -50,6 +52,21 @@ class Property
     /**
      * @ORM\Column(type="integer")
      */
+    private $park;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $room;
 
     /**
@@ -58,9 +75,11 @@ class Property
     private $mesure;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="integer")
      */
-    private $detail;
+    private $build;
+
+    
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Photo", mappedBy="property", cascade={"persist", "remove"})
@@ -185,16 +204,84 @@ class Property
         $this->mesure = $mesure;
 
         return $this;
+    }    
+
+    /**
+     * Get the value of address
+     */ 
+    public function getAddress()
+    {
+        return $this->address;
     }
 
-    public function getDetail(): ?string
+    /**
+     * Set the value of address
+     *
+     * @return  self
+     */ 
+    public function setAddress($address)
     {
-        return $this->detail;
+        $this->address = $address;
+
+        return $this;
     }
 
-    public function setDetail(?string $detail): self
+    /**
+     * Get the value of city
+     */ 
+    public function getCity()
     {
-        $this->detail = $detail;
+        return $this->city;
+    }
+
+    /**
+     * Set the value of city
+     *
+     * @return  self
+     */ 
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of build
+     */ 
+    public function getBuild()
+    {
+        return $this->build;
+    }
+
+    /**
+     * Set the value of build
+     *
+     * @return  self
+     */ 
+    public function setBuild($build)
+    {
+        $this->build = $build;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of park
+     */ 
+    public function getPark()
+    {
+        return $this->park;
+    }
+
+    /**
+     * Set the value of park
+     *
+     * @return  self
+     */ 
+    public function setPark($park)
+    {
+        $this->park = $park;
 
         return $this;
     }

@@ -124,8 +124,6 @@ class PropertyController extends AbstractController
 
     public function counterAll(PropertyRepository $propertyRepository)
     {
-        // make a database call or other logic
-        // to get the "$max" most recent articles
         $properties = $propertyRepository->findAll();
 
         return $this->render(

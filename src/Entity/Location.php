@@ -12,6 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=LocationRepository::class)
+ * @ORM\Table(name="location", uniqueConstraints={@ORM\UniqueConstraint(name="unique_location_name", columns={"name"})})
  */
 class Location
 {

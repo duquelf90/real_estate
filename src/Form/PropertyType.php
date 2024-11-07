@@ -55,10 +55,13 @@ class PropertyType extends AbstractType
             ->add('room', IntegerType::class, [
                 'attr' => ['class' => 'w-full px-4 py-2.5 text-base text-coolGray-900 font-normal outline-none focus:border-green-500 border border-coolGray-200 rounded-lg shadow-input']
             ])
+            ->add('build', IntegerType::class, [
+                'attr' => ['class' => 'w-full px-4 py-2.5 text-base text-coolGray-900 font-normal outline-none focus:border-green-500 border border-coolGray-200 rounded-lg shadow-input']
+            ])
             ->add('mesure', IntegerType::class, [
                 'attr' => ['class' => 'w-full px-4 py-2.5 text-base text-coolGray-900 font-normal outline-none focus:border-green-500 border border-coolGray-200 rounded-lg shadow-input']
             ])
-            ->add('detail', TextareaType::class, [
+            ->add('address', TextareaType::class, [
                 'attr' => [
                     'class' => 'block w-full h-64 p-6 text-base text-coolGray-900 font-normal outline-none focus:border-green-500 border border-coolGray-200 rounded-lg shadow-input resize-none'
                 ],

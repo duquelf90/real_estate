@@ -11,7 +11,6 @@ class PropertyDTO
     private $bath;
     private $room;
     private $mesure;
-    private $detail;
     private $location;
 
     public function __construct(
@@ -22,7 +21,6 @@ class PropertyDTO
         int $bath,
         int $room,
         int $mesure,
-        ?string $detail,
         string $location
     ) {
         $this->id = $id;
@@ -32,7 +30,6 @@ class PropertyDTO
         $this->bath = $bath;
         $this->room = $room;
         $this->mesure = $mesure;
-        $this->detail = $detail;
         $this->location = $location;
     }
 
@@ -72,10 +69,6 @@ class PropertyDTO
         return $this->mesure;
     }
 
-    public function getDetail(): ?string
-    {
-        return $this->detail;
-    }
 
     public function getLocation(): ?string
     {
