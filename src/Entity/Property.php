@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use App\Repository\PropertyRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -19,63 +20,75 @@ class Property
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $id;
 
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"property_list"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups({"property_list"})
      */
     private $type;
 
     /**
      * @ORM\ManyToOne(targetEntity=Location::class, inversedBy="properties")
+     * @Groups({"property_list"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $location;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $price;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $bath;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $park;
 
     /**
      * @ORM\Column(type="string")
+     * @Groups({"property_list"})
      */
     private $address;
 
     /**
      * @ORM\Column(type="string")
+     * @Groups({"property_list"})
      */
     private $city;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $room;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $mesure;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"property_list"})
      */
     private $build;
 
@@ -83,6 +96,7 @@ class Property
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Photo", mappedBy="property", cascade={"persist", "remove"})
+     * @Groups({"property_list"})
      */
     private $images;
 

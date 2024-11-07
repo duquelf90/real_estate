@@ -22,26 +22,7 @@ class ApiController extends AbstractFOSRestController
      */
     public function all(PropertyRepository $propertyRepository, SerializerInterface $serializer): Response
     {
-        $properties = $propertyRepository->findAll();
-        $propertyDTOs = [];
+        return $this->json($propertyRepository->findAll(), 200, [], ['groups' => ['property_list']]);
 
-        foreach ($properties as $property) {
-            $propertyDTO = new PropertyDTO(
-                $property->getId(),
-                $property->getName(),
-                $property->getType(),
-                $property->getPrice(),
-                $property->getBath(),
-                $property->getRoom(),
-                $property->getMesure(),
-                $property->getLocation()
-            );
-
-            $propertyDTOs[] = $propertyDTO;
-        }
-
-        $serializedProperties = $serializer->serialize($propertyDTOs, 'json');
-
-        return new Response($serializedProperties, Response::HTTP_OK, ['Content-Type' => 'application/json']);
     }
 }

@@ -6,8 +6,8 @@ use App\Repository\LocationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 
 /**
@@ -25,6 +25,8 @@ class Location
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"property_list"})
+
      */
     private $name;
 
@@ -32,7 +34,7 @@ class Location
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string|null
      */
-    private $image;    
+    private $image;
 
     /**
      * @ORM\OneToMany(targetEntity=Property::class, mappedBy="location")

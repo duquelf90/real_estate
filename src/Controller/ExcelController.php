@@ -5,26 +5,18 @@ namespace App\Controller;
 
 use App\Entity\Location;
 use App\Entity\Property;
-use App\Form\ExcelUploadType;
-use App\Service\ExcelReader;
 use Doctrine\ORM\EntityManagerInterface;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 
 class ExcelController extends AbstractController
 {
-    private $excelReader;
 
-    public function __construct(ExcelReader $excelReader)
-    {
-        $this->excelReader = $excelReader;
-    }
 
     /**
      * @Route("/upload", name="xlsx")
